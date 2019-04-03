@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package assignment4_edmundleung;
 
 import java.net.URL;
@@ -16,10 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-/**
- *
- * @author Administrator
- */
 public class FXMLDocumentController implements Initializable {
 
     private Label label;
@@ -85,6 +76,14 @@ public class FXMLDocumentController implements Initializable {
                 lb1.setText("The number is invalid.");
             } else if (id == 1) {
                 lbName.getText();
+            }
+            for (Member i : memberList) {
+                if (id == (memberList.indexOf(i))) {  
+                    tfName.setText(memberList.get(memberList.indexOf(i))+"");
+                    tfJob.setText(String.valueOf(memberList.indexOf(i)));
+                    tfNotes.setText(String.valueOf(memberList.indexOf(i)));
+                    System.out.println(i);
+                }
             }
         } catch (Exception e) {
             lb1.setText("Please enter a valid index number.");
