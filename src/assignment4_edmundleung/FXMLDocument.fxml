@@ -16,9 +16,9 @@
       <Label fx:id="lbName" layoutX="212.0" layoutY="104.0" text="Name" />
       <Label fx:id="lbJob" layoutX="212.0" layoutY="146.0" text="Job" />
       <Label fx:id="lbNotes" layoutX="212.0" layoutY="192.0" text="Notes" />
-      <TextField fx:id="tfName" layoutX="269.0" layoutY="100.0" onAction="#handleTfName" />
-      <TextField fx:id="tfJob" layoutX="269.0" layoutY="142.0" onAction="#handleTfJob" />
-      <TextField fx:id="tfNotes" layoutX="269.0" layoutY="188.0" onAction="#handleTfNotes" />
+      <TextField fx:id="tfName" layoutX="269.0" layoutY="100.0" />
+      <TextField fx:id="tfJob" layoutX="269.0" layoutY="142.0" />
+      <TextField fx:id="tfNotes" layoutX="269.0" layoutY="188.0" />
       <Button fx:id="btnClear" layoutX="223.0" layoutY="251.0" mnemonicParsing="false" onAction="#handleBtnClear" text="Clear" />
       <Button fx:id="btnAdd" layoutX="302.0" layoutY="251.0" mnemonicParsing="false" onAction="#handleBtnAdd" text="Add to Crew" />
       <Button fx:id="btnShow" layoutX="200.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleBtnShow" text="Show All Members" />

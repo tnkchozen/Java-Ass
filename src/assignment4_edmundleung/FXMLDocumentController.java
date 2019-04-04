@@ -2,7 +2,6 @@ package assignment4_edmundleung;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -89,18 +88,6 @@ public class FXMLDocumentController implements Initializable {
         } catch (Exception e) {
             lb1.setText("Please enter a valid index number.");
         }
-    }
-
-    @FXML
-    private void handleTfName(ActionEvent event) {
-    }
-
-    @FXML
-    private void handleTfJob(ActionEvent event) {
-    }
-
-    @FXML
-    private void handleTfNotes(ActionEvent event) {
     }
 
     @FXML
