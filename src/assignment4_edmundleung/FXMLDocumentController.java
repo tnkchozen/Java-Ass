@@ -1,5 +1,9 @@
 package assignment4_edmundleung;
 
+import java.util.*;
+import java.io.*;
+import java.io.File;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -57,7 +61,7 @@ public class FXMLDocumentController implements Initializable {
         memberList = new ArrayList<>();
         inEditing = false;
         indexOnEditing = 0;
-        fileName = "example.txt";
+        fileName = "crewMembers.txt";
         lb1.setText("We have " + memberList.size() + " members now.");
     }
 
@@ -71,7 +75,7 @@ public class FXMLDocumentController implements Initializable {
             if (memberList.isEmpty()) {
                 lb1.setText("The list is empty.");
             } else if (id < 0 || id > memberList.size()) {
-                lb1.setText("The number is out of range");
+                lb1.setText("The number is out of range.");
             } else if (id != (int)id) {
                 lb1.setText("The number is invalid.");
             } 
@@ -146,7 +150,20 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleBtnSave(ActionEvent event) {
-        
+        PrintWriter output = null;
+        try {
+        File file = new File(fileName);
+        output = new PrintWriter(file);
+//        for (Member i : memberList)
+//            output.write(i.toCSV());
+        } catch (IOException e) {
+            lb1.setText("File cannot be saved.");
+        } finally {
+            if (output != null) {
+                lb1.setText("File saved successfully.");
+                output.close();
+            }
+        }
     }
 
 }
