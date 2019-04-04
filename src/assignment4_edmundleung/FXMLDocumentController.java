@@ -2,6 +2,7 @@ package assignment4_edmundleung;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -57,7 +58,7 @@ public class FXMLDocumentController implements Initializable {
         memberList = new ArrayList<>();
         inEditing = false;
         indexOnEditing = 0;
-        fileName = "";
+        fileName = "example.txt";
         lb1.setText("We have " + memberList.size() + " members now.");
     }
 
@@ -70,19 +71,19 @@ public class FXMLDocumentController implements Initializable {
             int id = Integer.parseInt(tfNo.getText());
             if (memberList.isEmpty()) {
                 lb1.setText("The list is empty.");
-            } else if (id < 0 && id > memberList.size()) {
-                lb1.setText("The number is out of range.");
+            } else if (id < 0 || id > memberList.size()) {
+                lb1.setText("The number is out of range");
             } else if (id != (int)id) {
                 lb1.setText("The number is invalid.");
-            } else if (id == 1) {
-                lbName.getText();
-            }
+            } 
             for (Member i : memberList) {
                 if (id == (memberList.indexOf(i))) {  
-                    tfName.setText(memberList.get(memberList.indexOf(i))+"");
-                    tfJob.setText(String.valueOf(memberList.indexOf(i)));
-                    tfNotes.setText(String.valueOf(memberList.indexOf(i)));
-                    System.out.println(i);
+                    tfName.setText(memberList.get(id).getName());
+                    tfJob.setText(memberList.get(id).getJob());
+                    tfNotes.setText(memberList.get(id).getNotes());
+                    lb1.setText("Information for " + memberList.get(id).getName());
+                    inEditing = true;
+                    indexOnEditing = id;
                 }
             }
         } catch (Exception e) {
@@ -121,7 +122,8 @@ public class FXMLDocumentController implements Initializable {
         } else {
             Member newMember = new Member(tfName.getText(), tfJob.getText(), tfNotes.getText());
             if (inEditing == true) {
-                newMember = new Member(tfName.getText(), tfJob.getText(), tfNotes.getText());
+                newMember = new Member(tfName.getText(), tfJob.getText(), tfNotes.getText()); 
+                memberList.set(indexOnEditing, newMember);
             }
             else if (inEditing == false) {
                 memberList.add(newMember);
@@ -146,7 +148,12 @@ public class FXMLDocumentController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Crew Members");
         alert.setHeaderText("This is the full list");
-        alert.setContentText(memberList.toString());
+        StringBuilder builder = new StringBuilder();
+        for (Member i : memberList) {
+            builder.append(i + " ");
+        }
+        String text = builder.toString();
+        alert.setContentText(text);  
         alert.showAndWait();
     }
 
