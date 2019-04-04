@@ -39,4 +39,8 @@ public class Member {
     public String toString() {
         return "Member{name=" + getName() + ", job=" + getJob() + ", notes=" + getNotes() +"}";
     }
+    
+    public String toCSV() {
+        return "Member{name=" + getName() + ", job=" + getJob() + ", notes=" + getNotes() +"}";
+    }
 }

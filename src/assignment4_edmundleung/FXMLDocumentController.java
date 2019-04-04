@@ -1,6 +1,5 @@
 package assignment4_edmundleung;
 
-import java.util.*;
 import java.io.*;
 import java.io.File;
 import java.io.PrintWriter;
@@ -154,8 +153,8 @@ public class FXMLDocumentController implements Initializable {
         try {
         File file = new File(fileName);
         output = new PrintWriter(file);
-//        for (Member i : memberList)
-//            output.write(i.toCSV());
+        for (Member i : memberList)
+            output.write(i.toCSV());
         } catch (IOException e) {
             lb1.setText("File cannot be saved.");
         } finally {
