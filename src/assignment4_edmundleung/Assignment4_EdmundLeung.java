@@ -1,7 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Name: Edmund Leung
+ * Student ID: 991531421
+ * Class: PROG24178 1191_69188, Winter 2019
+ * Assignment #4: The Crew
+ * Date: April 5, 2019
+ * Program: Assignment4_EdmundLeung.java
+ * Description: A JavaFX FXML program that add, search, update, display
+ * and save using a GUI. 
  */
 package assignment4_edmundleung;
 

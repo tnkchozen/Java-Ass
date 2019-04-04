@@ -1,3 +1,13 @@
+/**
+ * Name: Edmund Leung
+ * Student ID: 991531421
+ * Class: PROG24178 1191_69188, Winter 2019
+ * Assignment #4: The Crew
+ * Date: April 5, 2019
+ * Program: Member.java
+ * Description: A Member class that has name, job, and notes attributes
+ * along with their getters and setters.
+ */
 package assignment4_edmundleung;
 
 public class Member {

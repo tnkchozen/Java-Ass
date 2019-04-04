@@ -1,3 +1,13 @@
+/**
+ * Name: Edmund Leung
+ * Student ID: 991531421
+ * Class: PROG24178 1191_69188, Winter 2019
+ * Assignment #4: The Crew
+ * Date: April 5, 2019
+ * Program: FXMLDocumentController.java
+ * Description: A JavaFX FXML program that add, search, update, display
+ * and save using a GUI. 
+ */
 package assignment4_edmundleung;
 
 import java.io.*;
